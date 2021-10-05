@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form id="myform" method="post" action="/home/useform">
+    <label>FirstName: </label><input type="text" id="FirstName" /><br />
+    <label>LastName:</label><input type="text" id="LastName" /><br />
+    <label>Email:</label><input type="email" id="Email"/><br />
+    <label>Password:</label><input type="password" id="Password"/><br />
+</form>
+<button id="clicker" input type="submit">Submit</button>
+<script>
+
+    function ProcessForm() {
+        let F = document.querySelector('#FirstName').value;
+        let L = document.querySelector('#LastName').value;
+        let E = document.querySelector('#Email').value;
+        if (!F || !L || !E) {
+            document.querySelector('#message').innerText = 'Please fill in all fields.';
+        }
+        else {
+            document.querySelector('#myform').submit();
+        }
+
+    let b2 = document.querySelector('#clicker');
+    b2.addEventListener('clicker', GrabText);
+
+</script>
